@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tree</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const tree = {
+    pid: "0",
+    id: "1",
+    value: "1",
+    children: [
+      {
+        pid: "1",
+        id: "1_1",
+        value: "1_1",
+      },
+      {
+        pid: "1",
+        id: "1_2",
+        value: "1_2",
+        children: [
+          {
+            pid: "1_2",
+            id: "1_2_1",
+            value: "1_2_1",
+          },
+        ],
+      },
+    ],
+  };
+  class TreeMenu {
+    constructor(flat, tree) {
+      this.flat = flat || [];
+      this.tree = tree || {};
+    }
+    // 平级结构转树，pid值为0的视作根节点
+    getTree(pid = 0) {
+      const items = {};
+      for (let i = 0; i < this.flat.length; i++) {
+        const key = this.flat[i].pid;
+        if (items[key]) {
+          items[key].push(this.flat[i]);
+        } else {
+          items[key] = [];
+          items[key].push(this.flat[i]);
+        }
+      }
+      return this.formatTree(items, pid);
+    }
+    formatTree(items, pid) {
+      const result = [];
+      if (!items[pid]) {
+        return result;
+      }
+      for (const t of items[pid]) {
+        t.children = this.formatTree(items, t.id);
+        result.push(t);
+      }
+      return result;
+    }
+    flat(tree) {
+      let res = [];
+      let stack = [tree];
+      while (stack.length) {
+        const node = stack.pop();
+        res.push(node);
+        if (node.children) {
+          let childrenLen = node.children.length;
+          for (let index = 0; index < childrenLen; index++) {
+            stack.unshift(node.children[index]);
+          }
+        }
+      }
+      return res;
+    }
+  }
+</script>

@@ -7,7 +7,49 @@
 - let 声明的全局变量不是全局对象的属性
 - 在定义前使用let声明的变量会报错
 
+### symbol,map,set
+
+#### Symbol
+
+解决的问题(背景)：对象属性重名
+
+#### Map&Set
+
+`Map` —— 是一个带键的数据项的集合。
+
+方法和属性如下：
+
+- `new Map([iterable])` —— 创建 map，可选择带有 `[key,value]` 对的 `iterable`（例如数组）来进行初始化。
+- `map.set(key, value)` —— 根据键存储值。
+- `map.get(key)` —— 根据键来返回值，如果 `map` 中不存在对应的 `key`，则返回 `undefined`。
+- `map.has(key)` —— 如果 `key` 存在则返回 `true`，否则返回 `false`。
+- `map.delete(key)` —— 删除指定键的值。
+- `map.clear()` —— 清空 map 。
+- `map.size` —— 返回当前元素个数。
+
+与普通对象 `Object` 的不同点：
+
+- 任何键、对象都可以作为键。
+- 有其他的便捷方法，如 `size` 属性。
+
+`Set` —— 是一组唯一值的集合。
+
+方法和属性：
+
+- `new Set([iterable])` —— 创建 set，可选择带有 `iterable`（例如数组）来进行初始化。
+- `set.add(value)` —— 添加一个值（如果 `value` 存在则不做任何修改），返回 set 本身。
+- `set.delete(value)` —— 删除值，如果 `value` 在这个方法调用的时候存在则返回 `true` ，否则返回 `false`。
+- `set.has(value)` —— 如果 `value` 在 set 中，返回 `true`，否则返回 `false`。
+- `set.clear()` —— 清空 set。
+- `set.size` —— 元素的个数。
+
+在 `Map` 和 `Set` 中迭代总是按照值插入的顺序进行的，所以我们不能说这些集合是无序的，但是我们不能对元素进行重新排序，也不能直接按其编号来获取元素。
+
+Map有键，Set没有键
+
 ### 执行机制相关
+
+原则：宏任务(同步任务) --> 微任务 --> 宏任务(异步任务)
 
 #### 1.event-loop
 
@@ -62,6 +104,14 @@ baz() // 1
 ```
 
 ### apply，call, bind
+
+作用：改变this默认指向
+
+延伸：
+
+this默认指向规则
+
+如何做？即实现apply,call,bind
 
 #### Function.prototype.apply()
 
@@ -648,6 +698,43 @@ const jsonp = ({ url, params, callbackName }) => {
    document.removeChild(scriptEle);
   }
  })
+}
+```
+
+### 位运算
+
+#### 判断奇偶
+
+```javascript
+function isOdd (n) {
+    return (n & 1) === 1
+}
+```
+
+#### 判断是否相同(1，2，4，8)
+
+n & m   相同为真
+
+#### 交换两个数
+
+#### 交换符号，正数<>负数
+
+#### 求绝对值
+
+```javascript
+function abs(num) {
+    let res = num>>31
+    return ((num^res) - res)
+}
+```
+
+#### 求平均值
+
+对于两个整数x,y，如果用 (x+y)/2 求平均值，会产生溢出，因为 x+y 可能会大于INT_MAX，但是我们知道它们的平均值是肯定不会溢出的，我们用如下算法：
+
+```javascript
+function average(x, y){ 
+    return (x&y)+((x^y)>>1); 
 }
 ```
 
