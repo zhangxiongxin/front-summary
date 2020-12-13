@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a3531e62-20d8-4096-8da9-f59691d32f75" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/front-summary.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/handwriting/algorithm/binary-search/2020-12-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/handwriting/algorithm/binary-search/2020-12-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/handwriting/algorithm/sort/quick/2020-12-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/handwriting/algorithm/sort/quick/2020-12-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/handwriting/brief.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/handwriting/cloneDeep/2020-12-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/handwriting/debounce/2020-12-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/handwriting/debounce/2020-12-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/handwriting/promise/2020-12-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/handwriting/throttle/2020-12-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/handwriting/throttle/2020-12-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/handwriting/cloneDeep.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/handwriting/debounce.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/10-设计模式.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/10-设计模式.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/11.开放式.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/11-开放式.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lM67PRvWHuaJ8HfRtUvgdBaLm4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\code\private\front-summary\demo\handwriting\throttle" />
+      <recent name="C:\code\private\front-summary\demo\handwriting\assets" />
+      <recent name="C:\code\private\front-summary\demo\handwriting\assets\css" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.2020-12-11.html">
+    <configuration name="2020-12-11.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/front-summary/demo/handwriting/cloneDeep/2020-12-11.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/lib/04/clone-deep/index.js" working-dir="$PROJECT_DIR$/lib/04/clone-deep">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.2020-12-11.html" />
+        <item itemvalue="Node.js.index.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a3531e62-20d8-4096-8da9-f59691d32f75" name="Default Changelist" comment="" />
+      <created>1607394445145</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607394445145</updated>
+      <workItem from="1607394447261" duration="2475000" />
+      <workItem from="1607505598231" duration="61000" />
+      <workItem from="1607673539485" duration="6428000" />
+      <workItem from="1607687164589" duration="9988000" />
+      <workItem from="1607825116343" duration="4804000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

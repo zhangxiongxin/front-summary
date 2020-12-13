@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    const PENDING = 'pending';
+    const FULFILLED = 'fulfilled';
+    const REJECTED = 'rejected';
+    function isFunc(f) {
+        return typeof f === 'function';
+    }
+    class AjPromise {
+        state = PENDING;
+        _value;
+        _reason;
+        _next = [];
+        _ok;
+        _ng;
+
+        constructor(fn) {
+            if(isFunc(fn)){
+                const resolve = (value)=>this._fire(value,FULFILLED);
+                const reject  = (value)=>this._fire(value,REJECTED);
+                try {
+                    fn(resolve, reject);
+                } catch (e) {
+                    reject(e);
+                }
+            }
+        }
+        then(onFulfilled, onRejected) {
+            let promise = new AjPromise();
+            promise._ok = onFulfilled;
+            promise._ng = onRejected;
+            this._next.push(promise);
+            // 如果上一个Promise已经完成，直接触发这一个Promise执行回调函数
+            try {
+                if(this.state === REJECTED){
+                    setTimeout(()=>{promise._fire(this._reason ,REJECTED)},0);
+                }else if(this.state === FULFILLED){
+                    setTimeout(()=>{promise._fire(this._value ,FULFILLED)},0);
+                }
+            } catch (error) {
+                setTimeout(()=>{promise._fire(error ,REJECTED)},0);
+            }
+            return promise;
+        }
+        catch(onRejected) {
+            let promise = new AjPromise();
+            promise._ng = onRejected;
+            this._next.push(promise);
+            return promise;
+        }
+        //触发执行Promise函数，并修改状态
+        _fire(value,state){
+            if(state === FULFILLED){
+                this._value||(this._value = value);
+                this.state = PromiseHandle(this,this._ok,this._value,state);
+            }else if(state === REJECTED){
+                this._reason||(this._reason = value);
+                this.state = PromiseHandle(this,this._ng,this._reason,REJECTED);
+            }
+        }
+    }
+    //Promise回调处理函数
+    function PromiseHandle (promise,handle,value,state){
+        let res;
+        if(value instanceof AjPromise){
+            value._fire(null,value.state);
+            return value.state;
+        }
+        if(isFunc(handle)){//是函数，执行
+            try {
+                if(promise.state === PENDING){
+                    res = handle(value);
+                }else{ //执行过就不执行
+                    res = this._value;
+                }
+            } catch (error) {
+                for (const p of promise._next) {//通知下一链失败回调
+                    if(p instanceof AjPromise && p.state === PENDING)
+                        setTimeout(()=>{p._fire(error,REJECTED)},0);
+                }
+                return REJECTED;
+            }
+            //对返回结果处理
+            if(res instanceof AjPromise){
+                res._next = promise._next;
+            }else{
+                for (const p of promise._next) {//通知下一链成功回调
+                    if(p instanceof AjPromise && p.state === PENDING)
+                        setTimeout(()=>{p._fire(res,FULFILLED)},0);
+                }
+            }
+        }else {//不是函数，直接传给下一链
+            for (const p of promise._next ) {
+                if(p instanceof AjPromise && p.state === PENDING){
+                    setTimeout(()=>{p._fire(value,state)},0);
+                }
+            }
+        }
+        return FULFILLED;
+    };
+</script>

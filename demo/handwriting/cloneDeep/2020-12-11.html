@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cloneDeep</title>
+</head>
+<body>
+    <div>手写深拷贝 1</div>
+</body>
+</html>
+<script>
+    function getType(obj) {
+        return Object.prototype.toString.call(obj)
+    }
+    function cloneDeep(target) {
+        let res = {}
+        if (typeof target !== 'object') return target
+        for (let key in target) {
+            if (target.hasOwnProperty(key)) {
+                res[key] = cloneDeep(target[key])
+            }
+        }
+        return res
+    }
+    const obj = {
+        a: {
+            aa: {
+                aaa: {
+                    name: 'aaa'
+                }
+            }
+        },
+        b: {
+            name: 'b'
+        }
+    }
+    const cloneObj = cloneDeep(obj)
+    cloneObj.a.aa.aaa.name = 'aaa_clone'
+    console.log(cloneObj, obj)
+</script>

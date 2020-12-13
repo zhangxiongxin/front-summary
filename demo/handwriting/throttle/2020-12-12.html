@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label>
+        <input type="text">
+    </label>
+</div>
+
+</body>
+</html>
+<script>
+    function throttle (fn, wait) {
+        let needCallFlag = true
+        return function () {
+            if (!needCallFlag) return
+            needCallFlag = false
+            setTimeout(() => {
+                fn.apply(this, arguments)
+                needCallFlag = true
+            }, wait)
+        }
+    }
+    const onInputChange = throttle((e) => {
+        console.log(e.target.value)
+    }, 1000)
+    window.addEventListener('input', onInputChange)
+</script>

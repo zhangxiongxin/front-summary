@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左右双指针</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /**
+     * 数组必须有序
+     * @param arr
+     * @param target
+     * @returns {number}
+     */
+    function binarySearch(arr, target) {
+        let l = -1, r = arr.length
+        let mid
+        const isBlue = (item) => {
+            return item <= target
+        }
+        while (l + 1 !== r) {
+            mid = Math.floor((l + r) / 2)
+            if (isBlue(arr[mid])) {
+                l = mid
+            } else {
+                r = mid
+            }
+        }
+        return arr[l] === target ? l : -1
+    }
+    const arr1 = [1,5,7,9,23]
+    console.log(binarySearch(arr1, 1), 0)
+    console.log(binarySearch(arr1, 7), 2)
+    console.log(binarySearch(arr1, 17), -1)
+</script>

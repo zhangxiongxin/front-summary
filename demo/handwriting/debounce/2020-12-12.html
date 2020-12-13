@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>debounce</title>
+</head>
+<body>
+    <div style="width: 100px;height: 3000px">
+        去抖测试
+    </div>
+</body>
+</html>
+<script>
+    let num = 0
+
+    function debounce(fn, wait) {
+        const _arg = [].slice.call(arguments)
+        const context = this
+        let timer = null
+        return function () {
+            clearTimeout(timer)
+            timer = setTimeout(() => {
+                fn.apply(context, _arg)
+            }, wait)
+        }
+    }
+    const debounce1 = (fn, time) => {
+        let timeout = null;
+        return function() {
+            clearTimeout(timeout)
+            timeout = setTimeout(() => {
+                fn.apply(this, arguments);
+            }, time);
+        }
+    };
+    const onPageScroll = debounce(() => {
+        num++
+        console.log(num)
+    }, 1000)
+    window.addEventListener('scroll', onPageScroll)
+</script>

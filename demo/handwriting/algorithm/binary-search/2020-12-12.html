@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二分查找</title>
+</head>
+<body>
+    <div>
+        数组1: [1,2,3,5,5,5,8,9]
+        数组2：[1,2,3,6,9,12]
+    </div>
+</body>
+</html>
+<script>
+    const binarySearch = function (arr, target) {
+        let l = -1, r = arr.length
+        let mid
+        const isBlue = (item) => {
+            return item <= target
+        }
+        while (l + 1 !== r) {
+            mid = Math.floor(((l + r) / 2))
+            if (isBlue(arr[mid])) {
+                l = mid
+            } else {
+                r = mid
+            }
+        }
+        return arr[l] === target ? l : -1
+    }
+    console.log(binarySearch([1,2,3,6,9,12], 2))
+</script>
