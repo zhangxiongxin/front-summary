@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFS</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function Queue() {}
+    Queue.prototype.linkedList = []
+    Queue.prototype.enqueue = function (i) {
+        this.linkedList.push(i)
+    }
+    Queue.prototype.dequeue = function () {
+        return this.linkedList.shift()
+    }
+    Queue.prototype.peek = function () {
+        return this.linkedList[0]
+    }
+    Queue.prototype.isEmpty = function () {
+        return this.linkedList.length === 0
+    }
+    function breadthFirstSearch(rootNode) {
+        let queue = new Queue()
+        queue.enqueue(rootNode)
+        while (!queue.isEmpty()) {
+            const currentNode = queue.peek()
+            console.log(currentNode.val)
+            if (currentNode.left) {
+                queue.enqueue(currentNode.left)
+            }
+            if (currentNode.right) {
+                queue.enqueue(currentNode.right)
+            }
+            queue.dequeue()
+        }
+    }
+    const data = {
+        val: 'A',
+        left: {
+            val: 'B',
+            left: {
+                val: 'D'
+            },
+            right: {
+                val: 'E'
+            }
+        },
+        right: {
+            val: 'C',
+            left: {
+                val: 'F'
+            },
+            right: {
+                val: 'G'
+            }
+        }
+    }
+    breadthFirstSearch(data)
+</script>

@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3531e62-20d8-4096-8da9-f59691d32f75" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/front-summary.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/handwriting/algorithm/binary-search/2020-12-12.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/handwriting/algorithm/binary-search/2020-12-13.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/handwriting/algorithm/sort/quick/2020-12-12.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/handwriting/algorithm/sort/quick/2020-12-13.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/handwriting/brief.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/handwriting/cloneDeep/2020-12-11.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/handwriting/debounce/2020-12-12.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/handwriting/debounce/2020-12-13.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/handwriting/promise/2020-12-12.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/handwriting/throttle/2020-12-12.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/handwriting/throttle/2020-12-13.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/handwriting/cloneDeep.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/handwriting/debounce.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/10-设计模式.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/10-设计模式.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/11.开放式.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/11-开放式.md" afterDir="false" />
+    <list default="true" id="a3531e62-20d8-4096-8da9-f59691d32f75" name="Default Changelist" comment="feat:debounce,binary-search etc.">
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/handwriting/brief.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/handwriting/brief.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/handwriting/promise/2020-12-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/handwriting/promise/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/02-框架.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/02-框架.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/07-性能优化 &amp; 安全.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/07-性能优化 &amp; 安全.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
+        <option value="TypeScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -49,20 +38,36 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/demo/handwriting/algorithm/BFS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="ts.external.directory.path" value="C:\app\WebStorm 2020.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\code\private\front-summary\demo\handwriting\algorithm\BFS" />
+      <recent name="C:\code\private\front-summary\demo\handwriting\algorithm\binary-search" />
+      <recent name="C:\code\private\front-summary" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\code\private\front-summary\demo\handwriting\algorithm" />
+      <recent name="C:\code\private\front-summary\demo\handwriting\algorithm\traceback" />
+      <recent name="C:\code\private\front-summary" />
       <recent name="C:\code\private\front-summary\demo\handwriting\throttle" />
       <recent name="C:\code\private\front-summary\demo\handwriting\assets" />
-      <recent name="C:\code\private\front-summary\demo\handwriting\assets\css" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.2020-12-11.html">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="yarn test" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.2020-12-15.js">
     <configuration name="2020-12-11.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/front-summary/demo/handwriting/cloneDeep/2020-12-11.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="2020-12-15.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/demo/handwriting/out-of-order/2020-12-15.js" working-dir="$PROJECT_DIR$/demo/handwriting/out-of-order">
       <method v="2" />
     </configuration>
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/lib/04/clone-deep/index.js" working-dir="$PROJECT_DIR$/lib/04/clone-deep">
@@ -70,6 +75,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.2020-12-15.js" />
         <item itemvalue="JavaScript Debug.2020-12-11.html" />
         <item itemvalue="Node.js.index.js" />
       </list>
@@ -87,8 +93,21 @@
       <workItem from="1607505598231" duration="61000" />
       <workItem from="1607673539485" duration="6428000" />
       <workItem from="1607687164589" duration="9988000" />
-      <workItem from="1607825116343" duration="4804000" />
+      <workItem from="1607825116343" duration="13239000" />
+      <workItem from="1608037203494" duration="7960000" />
+      <workItem from="1608214581839" duration="864000" />
+      <workItem from="1608305098627" duration="7215000" />
+      <workItem from="1608515943908" duration="10884000" />
+      <workItem from="1608556213861" duration="7800000" />
     </task>
+    <task id="LOCAL-00001" summary="feat:debounce,binary-search etc.">
+      <created>1607858585406</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607858585406</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,5 +124,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat:debounce,binary-search etc." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:debounce,binary-search etc." />
   </component>
 </project>

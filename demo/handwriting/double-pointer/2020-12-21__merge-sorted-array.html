@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 合并两个有序数组
+    function mergeArray(arr1, arr2) {
+        const arr2Len = arr2.length
+        let pointerArr1 = arr1.length - 1
+        let pointerArr2 = arr2Len - 1
+        const emptyArr = new Array(arr2Len).fill(null)
+        arr1 = arr1.concat(emptyArr)
+        let pointerArr1After = arr1.length - 1
+        let num = 0
+        while (pointerArr2 >= 0) {
+            if (arr2[pointerArr2] >= arr1[pointerArr1]) {
+                arr1[pointerArr1After - num] = arr2[pointerArr2]
+                pointerArr2--
+            } else {
+                arr1[pointerArr1After - num] = arr1[pointerArr1]
+                pointerArr1--
+            }
+            num++
+        }
+        return arr1
+    }
+</script>

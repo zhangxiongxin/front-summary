@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡排序</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function bubbleSort(arr) {
+        if (arr.length <= 1) return arr
+        let len = arr.length
+        for (let i = 0; i < len; i++) {
+            let hasSwapFlag = false
+            for (let j = 0; j < len - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+                    hasSwapFlag = true
+                }
+            }
+            if (!hasSwapFlag) return arr
+        }
+        return arr
+    }
+    const nums = [3,4,1,2,6,7,2]
+    console.log(bubbleSort(nums))
+</script>

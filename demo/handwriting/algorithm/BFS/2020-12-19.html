@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function breadthFirstSearch(rootNode) {
+
+    }
+    const data = {
+        val: 'A',
+        left: {
+            val: 'B',
+            left: {
+                val: 'D'
+            },
+            right: {
+                val: 'E'
+            }
+        },
+        right: {
+            val: 'C',
+            left: {
+                val: 'F'
+            },
+            right: {
+                val: 'G'
+            }
+        }
+    }
+    console.log(breadthFirstSearch(data, 'C'))
+</script>

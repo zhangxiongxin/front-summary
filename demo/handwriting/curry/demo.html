@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function createCurry(fn) {
+        if(typeof fn !== "function"){
+            throw TypeError("fn is not function.");
+        }
+        //复用第一个参数
+        var args = [].slice.call(arguments, 1);
+        //返回新函数
+        return function(){
+            //收集剩余参数
+            var _args = [].slice.call(arguments);
+            //返回结果
+            return fn.apply(this, args.concat(_args));
+        }
+    }
+</script>

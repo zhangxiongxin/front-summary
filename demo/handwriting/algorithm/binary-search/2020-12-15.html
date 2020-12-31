@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二分搜索</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    const binarySearch = function (arr, target) {
+        let l = -1, r = arr.length
+        const isBlue = item => item <= target
+        while (l + 1 !== r) {
+            const m = Math.floor((l + r) / 2)
+            if (isBlue(arr[m])) {
+                l = m
+            } else {
+                r = m
+            }
+        }
+        return arr[l] === target ? l : -1
+    }
+    const data = [1,2,4,6,8]
+    console.log(binarySearch(data, 4))
+    console.log(binarySearch(data, 67))
+</script>

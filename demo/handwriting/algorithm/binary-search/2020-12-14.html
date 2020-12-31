@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /**
+     *
+     * @param arr
+     * @param target
+     */
+    function binarySearch(arr, target) {
+        const isBlue = item => item <= target
+        let l = -1, r = arr.length
+        while (l + 1 !== r) {
+            let m = Math.floor((l + r) / 2)
+            if (isBlue(arr[m])) {
+                l = m
+            } else {
+                r = m
+            }
+        }
+        return arr[l] === target ? l : -1
+    }
+    const data = [1,4,6,8,10]
+    console.log(binarySearch(data, 4))
+    console.log(binarySearch(data, 89))
+</script>

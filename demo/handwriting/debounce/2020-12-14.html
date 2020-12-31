@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="width: 100px;height: 3000px;"></div>
+</body>
+</html>
+<script>
+    var num = 0
+    const debounce = function (fn, wait) {
+        let timer = null
+        return function () {
+            clearTimeout(timer)
+            timer = setTimeout(() => {
+                fn.apply(arguments)
+            }, wait)
+        }
+    }
+    const onPageScroll = debounce(() => {
+        console.log(num)
+        num++
+    }, 1000)
+    window.addEventListener('scroll', onPageScroll)
+</script>
+

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输出什么</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 连续运算符，块级作用域
+    for (let i = (setTimeout(() => {
+        console.log('setTimeout', i)
+    }, 50), 3); i < 5; i++) {
+        console.log('循环体', i)
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    const quickSort = function (arr) {
+        if (arr.length <= 1) return arr
+        let left = [], right = [], equals = []
+        const pivotIndex = Math.floor(arr.length / 2)
+        const pivot = arr.splice(pivotIndex, 1)[0]
+        equals = [pivot]
+        arr.forEach(item => {
+            if (item < pivot) {
+                left.push(item)
+            } else if (item === pivot) {
+                equals.push(item)
+            } else {
+                right.push(item)
+            }
+        })
+        const sortedLeft = quickSort(left)
+        const sortedRight = quickSort(right)
+        return sortedLeft.concat(equals, sortedRight)
+    }
+    const arr = [4,1,3,6,3,5,4,0]
+    console.log(quickSort(arr))
+</script>

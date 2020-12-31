@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function Queue() {}
+    Queue.prototype.linkedList = []
+    Queue.prototype.enqueue = function (item) {
+        this.linkedList.push(item)
+    }
+    Queue.prototype.dequeue = function () {
+        return this.linkedList.shift()
+    }
+    Queue.prototype.isEmpty = function () {
+        return this.linkedList.length === 0
+    }
+    const breadthFirstSearch = function (rootNode, target) {
+        const queue = new Queue()
+        queue.enqueue(rootNode)
+        let res = null
+        while (!queue.isEmpty()) {
+            const currentNode = queue.dequeue()
+            console.log(currentNode)
+            if (currentNode.val === target) {
+                res = currentNode
+                break
+            }
+            if (currentNode.left) {
+                queue.enqueue(currentNode.left)
+            }
+            if (currentNode.right) {
+                queue.enqueue(currentNode.right)
+            }
+        }
+        return res || -1
+    }
+    const data = {
+        val: 'A',
+        left: {
+            val: 'B',
+            left: {
+                val: 'D'
+            },
+            right: {
+                val: 'E'
+            }
+        },
+        right: {
+            val: 'C',
+            left: {
+                val: 'F'
+            },
+            right: {
+                val: 'G'
+            }
+        }
+    }
+    console.log(breadthFirstSearch(data, 'C'))
+</script>
